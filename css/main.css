@@ -1,0 +1,53 @@
+canvas {
+    box-shadow: -1px 1px 2px 3px #222;
+    cursor: pointer;
+}
+
+.body {
+    margin: 0 30px;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.tools .color-field {
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid white;
+    align-self: center;
+    margin: 0 8px;
+}
+
+.tools .button {
+    align-self: center;
+    width: 100px;
+    height: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    background: #222;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.color-picker {
+    align-self: center;
+    height: 50px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.pen-range {
+    align-self: center;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
