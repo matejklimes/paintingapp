@@ -7,11 +7,15 @@ start_background_color = "white";
 context.fillStyle = start_background_color;
 context.fillRect(0, 0, canvas.width, canvas.height);
 
-let draw_color = "blue";
+//let draw_color = "black";
 let draw_width = "3";
 let is_drawing = false;
 
-//let current_tool = "brush";
+let save_image_data;
+let stroke_color = "black";
+let fill_color = "black"
+let polygon_sides = 6;
+let current_tool = "brush";
 
 let restore_array = [];
 let index = -1;
@@ -26,7 +30,7 @@ canvas.addEventListener("mouseup", stop1, false);
 canvas.addEventListener("mouseout", stop1, false);
 
 function change_color(element) {
-    draw_color = element.style.background;
+    stroke_color = element.style.background;
 }
 
 function clear_canvas() {
@@ -49,13 +53,20 @@ function undo_last() {
     }
 }
 
-/*function change_tool(toolClicked) {
+function change_tool(toolClicked) {
+    document.getElementById("open").className = "";
+    document.getElementById("save").className = "";
     document.getElementById("brush").className = "";
     document.getElementById("eraser").className = "";
+    document.getElementById("line").className = "";
+    document.getElementById("circle").className = "";
+    document.getElementById("rectangle").className = "";
+    document.getElementById("triangle").className = "";
+    document.getElementById("polygon").className = "";
 
     document.getElementById(toolClicked).className = "selected";
     current_tool = toolClicked;
-}*/
+}
 
 function start(event) {
     is_drawing = true;
@@ -68,7 +79,7 @@ function start(event) {
 function draw(event) {
     if (is_drawing) {
         context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop)
-        context.strokeStyle = draw_color;
+        context.strokeStyle = stroke_color;
         context.lineWidth = draw_width;
         context.lineCap = "round";
         context.lineJoin = "round";
@@ -96,3 +107,37 @@ function stop1(event) {
     }
     console.log(restore_array);
 }
+
+class ShapeBoundingBox {
+    constructor(left, top, width, height) {
+        this.left = left;
+        this.top = top;
+        this.width = width;
+        this.height = height;
+    }
+}
+
+class MouseDownPos {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Location {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class PolygonPoint {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+let shape_bounding_box = new ShapeBoundingBox(0, 0, 0, 0);
+let mouse_down = new MouseDownPos(0, 0);
+let loc = new Location(0, 0);
