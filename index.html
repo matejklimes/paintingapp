@@ -12,43 +12,37 @@
   </head>
   <body class="bg-dark">
       <header>
-        <h1 class="p-5 border-bottom border-info text-white text-center">Let's paint!</h1>
+        <h1 class="p-5 border-bottom border-info text-dark text-center bg-info">Let's paint!</h1>
       </header>
       <main>
-        <div class="field">
+        <div class="field p-4">
             <canvas id="canvas"></canvas>
             <div class="tools">
                 <button onClick="undo_last()" type="button" class="button">Undo</button>
                 <button onClick="clear_canvas()" type="button" class="button">Clear</button>
 
-                <div onClick="change_color(this)" class="color-field" style="background: black;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: gray;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: red;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: orangered;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: orange;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: yellow;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: greenyellow;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: lightblue;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: blue;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: purple;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Black" style="background: black;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Gray" style="background: gray;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Red" style="background: red;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Orange-red" style="background: orangered;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Orange" style="background: orange;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Yellow" style="background: yellow;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Green-yellow" style="background: greenyellow;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Light blue" style="background: lightblue;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Blue" style="background: blue;"></div>
+                <div onClick="change_color(this)" class="color-field" title="Purple" style="background: purple;"></div>
 
-                <input onInput="draw_color = this.value" type="color" class="color-picker">
-                <input onInput="draw_width = this.value" type="range" min="2" max="120" class="pen-range">
+                <input onInput="draw_color = this.value" type="color" class="color-picker"  title="Color picker">
+                <input onInput="draw_width = this.value" type="range" min="2" max="120" class="pen-range"  title="Width">
 
-                <a onClick="open_image()" id="open" href="#"><img src="" type="image"></a>
-                <a onClick="save_image()" id="save" href="#"><img src="" type="image"></a>
-                <a onClick="change_tool('brush')" id="brush" href="#"><img src="img/pen1.png" type="image"></a>
-                <a onClick="change_tool('eraser')" id="eraser" href="#"><img src="img/eraser1.png" type="image"></a>
-                <a onClick="change_tool('line')" id="line" href="#"><img src="" type="image"></a>
-                <a onClick="change_tool('circle')" id="circle" href="#"><img src="" type="image"></a>
-                <a onClick="change_tool('rectangle')" id="rectangle" href="#"><img src="" type="image"></a>
-                <a onClick="change_tool('triangle')" id="triangle" href="#"><img src="" type="image"></a>
-                <a onClick="change_tool('polygon')" id="polygon" href="#"><img src="" type="image"></a>
+                <a onClick="save_image()" id="save" href="#" title="Save"><img src="img/save.png" type="image"></a>
+                <a onClick="change_tool()" id="brush" href="#" title="Pencil"><img src="img/pen1.png" type="image"></a>
+                <a onClick="change_tool()" id="eraser" href="#" title="Rubber"><img src="img/eraser1.png" type="image"></a>
             </div>
         </div>
       </main>
-      <footer>
-
+      <footer class="bg-dark border-top border-info p-3">
+        <p class="text-center text-info">&copy; 2021 Matěj Klimeš
       </footer>
       
     <!-- Optional JavaScript -->

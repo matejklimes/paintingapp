@@ -1,6 +1,5 @@
 canvas {
     box-shadow: -1px 1px 2px 3px #222;
-    cursor: pointer;
     padding-left: 0;
     padding-right: 0;
     margin: auto;
@@ -71,6 +70,12 @@ body {
     border-radius: 15%;
 }
 
+.tools a:visited {
+    background: #2a3035;
+    box-sizing: border-box;
+    border: 2px solid lightgray;
+    border-radius: 15%;
+}
 
 .selected {
     background: #2a3035;
@@ -78,4 +83,3 @@ body {
     border: 2px solid white;
     border-radius: 15%;
 }
-
