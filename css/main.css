@@ -3,10 +3,6 @@ canvas {
     cursor: pointer;
 }
 
-.body {
-    margin: 0 30px;
-}
-
 .tools {
     display: flex;
     justify-content: center;
@@ -36,6 +32,7 @@ canvas {
     background: #222;
     font-weight: bold;
     margin: 0 15px;
+    outline: none;
 }
 
 .color-picker {
@@ -49,5 +46,20 @@ canvas {
     align-self: center;
     margin: 0 8px;
     cursor: pointer;
+}
+
+.tools img {
+    align-self: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 5px;
+    padding: 5px 5px;
+}
+
+.selected {
+    background: #2a3035;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 15%;
 }
 

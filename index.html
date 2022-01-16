@@ -20,14 +20,30 @@
             <div class="tools">
                 <button onClick="undo_last()" type="button" class="button">Undo</button>
                 <button onClick="clear_canvas()" type="button" class="button">Clear</button>
-                
+
+                <div onClick="change_color(this)" class="color-field" style="background: black;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: gray;"></div>
                 <div onClick="change_color(this)" class="color-field" style="background: red;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: blue;"></div>
-                <div onClick="change_color(this)" class="color-field" style="background: green;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: orangered;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: orange;"></div>
                 <div onClick="change_color(this)" class="color-field" style="background: yellow;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: greenyellow;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: lightblue;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: blue;"></div>
+                <div onClick="change_color(this)" class="color-field" style="background: purple;"></div>
 
                 <input onInput="draw_color = this.value" type="color" class="color-picker">
-                <input onInput="draw_width = this.value" type="range" min="1" max="100" class="pen-range">
+                <input onInput="draw_width = this.value" type="range" min="2" max="120" class="pen-range">
+
+                <!-- <a onClick="open_image()" id="open" href="#"><img src="" type="image"></a>
+                <a onClick="save_image()" id="save" href="#"><img src="" type="image"></a> -->
+                <a onClick="change_tool('brush')" id="brush" href="#"><img src="img/pen1.png" type="image"></a>
+                <a onClick="change_tool('eraser')" id="eraser" href="#"><img src="img/eraser1.png" type="image"></a>
+                <!-- <a onClick="change_tool('line')" id="line" href="#"><img src="" type="image"></a>
+                <a onClick="change_tool('circle')" id="circle" href="#"><img src="" type="image"></a>
+                <a onClick="change_tool('rectangle')" id="rectangle" href="#"><img src="" type="image"></a>
+                <a onClick="change_tool('triangle')" id="triangle" href="#"><img src="" type="image"></a>
+                <a onClick="change_tool('polygon')" id="polygon" href="#"><img src="" type="image"></a> -->
             </div>
         </div>
       </main>

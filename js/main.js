@@ -1,5 +1,5 @@
 const canvas = document.getElementById("canvas");
-canvas.width = window.innerWidth - 60;
+canvas.width = 1100;
 canvas.height = 400;
 
 let context = canvas.getContext("2d");
@@ -10,6 +10,8 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 let draw_color = "blue";
 let draw_width = "3";
 let is_drawing = false;
+
+//let current_tool = "brush";
 
 let restore_array = [];
 let index = -1;
@@ -46,6 +48,14 @@ function undo_last() {
         context.putImageData(restore_array[index], 0, 0);
     }
 }
+
+/*function change_tool(toolClicked) {
+    document.getElementById("brush").className = "";
+    document.getElementById("eraser").className = "";
+
+    document.getElementById(toolClicked).className = "selected";
+    current_tool = toolClicked;
+}*/
 
 function start(event) {
     is_drawing = true;
