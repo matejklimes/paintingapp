@@ -69,8 +69,6 @@ function start(event) {
     context.beginPath();
     context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
 
-    document.getElementById("canvas").style.cursor = "url('../img/pen1.png'), default";
-
     event.preventDefault();
 }
 
